@@ -1,10 +1,13 @@
 exports.paginaInicial = (req, res) => {
-    console.log(req.session.usuiario);
-    res.render('index');
+    res.render('index', {
+        titulo: 'This is the title of <b>page</b>',
+        numeros: [0, 1, 2, 3, 4, 5]
+    });
+    return
 }
 
 exports.trataPost = (req, res) => {
-    res.send(`Nome ${req.body.cliente} enviado com sucesso!`)
+    res.send(req.body)
 }
 
 
